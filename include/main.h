@@ -12,6 +12,8 @@
 
     #include <main_window.h>
 
+    #include "input/mouse.h"
+
 
     extern bool can_quit; 
 

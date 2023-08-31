@@ -9,6 +9,7 @@ project(DECfront VERSION 0.0.1 LANGUAGES C CXX)
 file(GLOB executable_source_files
     "./main.c"
     "./src/*.c"
+    "./src/input/*.c"
 )
 
 set(executable_header_files

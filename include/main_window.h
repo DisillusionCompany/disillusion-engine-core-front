@@ -2,7 +2,8 @@
 #ifndef MAIN_WINDOW_H_
 #define MAIN_WINDOW_H_
 
-    
+    #include <input/mouse.h>
+
     #ifdef __ANDROID__
 
         #include <SDL.h>
@@ -42,6 +43,8 @@
     
 
     extern void update_main_window_attributes(void);
+
+    extern void handle_main_window(SDL_WindowEvent *event);
 
 
     extern void quit_main_window(void);

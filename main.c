@@ -29,10 +29,16 @@ int main(int argument_count, char *argument_values[])
     /*Temp: */
         can_quit = false;
 
+
     SDL_Event event;
 
     while (can_quit == false)
     {
+
+        update_mouse();
+
+        update_main_window_attributes();
+
 
         while (SDL_PollEvent(&event))
         {
@@ -45,12 +51,39 @@ int main(int argument_count, char *argument_values[])
                 can_quit = true;
 
                 break;
+
+
+            case SDL_WINDOWEVENT:
+
+                if (event.window.windowID == SDL_GetWindowID(main_window))
+                {
+
+                    handle_main_window(&event.window);
+
+                }
+
+                break;
+
+            default:
+                break;
             
             }
 
         }
 
+        // system("cls");
+
+        // for (int i = 0; i < numButtons; i++)
+        // {   
+
+        //     printf("controleer butom %d, value: %d\n", i, SDL_JoystickGetButton(gGameController, i));
+
+        // }
+
+        SDL_Delay(1);
+
     }
+
 
 
     return 0;
